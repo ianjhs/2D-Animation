@@ -1,0 +1,12 @@
+Overview of the Animation:
+
+The scene will portray two cars that crash. In the background of the scene, there are trees, stars, and clouds. In total there are 4 classes: car, clouds, stars, and tree. There will be two instances of each class. The sequence is expected to run for a few seconds.
+
+Description of each object:
+For Michael's part of the progress report, there is a car object that will drive from the left side of the scene out of the scene. The wheels will rotate as it moves to simulate the look of a real car. The car will have multiple color options but will be rather simple in shape. The car object is made up of two freehand shapes as well as two ellipse wheel objects containing the spokes and inside of the wheel. These wheel objects are then grouped together so that they will be able to rotate easily. The planned necessary fields for the car will be the color. The car will have a rotate wheel function as well as a move function. I will then combine them into a crash function where both cars move in opposite directions and stop when they collide.
+
+Ashna created twinkling stars in the sky. One is a bigger shining star twinkling in place and the other is a smaller star that is twinkling around the bigger star. The star will not look like a typical shape of a star. Rather it will consist of a circle with shining rays of different lengths. The star will translate and scale to simulate the twinkling. To make this, Ashna will create a Star class with two methods to create and animate the circle and the create the rays. The necessary fields for the star class will include: x, y, radius, number of rays, angle, and the length of the twinkle.
+
+Ahmet's part: For cloud class, there are 5 different clouds pictures that are imported. The shape, and the size of these clouds makes them unique from each other. These clouds will be moving at the top of the screen from left to right. Clouds are fading at random, giving the cloudy characteristic. Whenever one disappears then the other one shows up.
+
+For Ian's part, he will create a tree class. From this tree class he will animate two instances of the class in the form of two objects. These trees will be located somewhere in the background. The tree will include parameters such as leaves, fruit, and the trunk of the tree. They will be animated differently. For instance one tree may have fruit while the other may not. The difference in animation could be explored by having one tree's leaves sway while the other tree has its fruit fall.
