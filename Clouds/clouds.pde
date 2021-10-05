@@ -35,13 +35,10 @@ class Cloud {
     this.r = r;
     this.count = count;
     this.fadeAway = fadeAway;
-    this.img = new PImage[5];
-    //this.tempImg = tempImg;
-    
-  }
+    this.img = new PImage[5];    
+}
   
    void setcloud(){
-    //PImage[] img = new PImage[5];
     smooth();
     noStroke();
 
@@ -105,7 +102,7 @@ class Gradient {
     this.axis = axis;
   }
   
-  void setGradient() {    //int x, int y, float w, float h, color b1, color b2, int axis 
+  void setGradient() {    
       noFill();
       int Y_AXIS = 1;
       if (axis == Y_AXIS) {  // Top to bottom gradient
