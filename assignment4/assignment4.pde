@@ -13,8 +13,8 @@ void setup() {
   size(1000,1000);
   
    //play tokyo drift
-  //file = new SoundFile(this, "sound.wav");
-  //file.play();
+  file = new SoundFile(this, "sound.wav");
+  file.play();
 
   //star class
   star = new Star();
