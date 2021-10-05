@@ -1,26 +1,47 @@
-PImage[] clouds = new PImage[5];
-
-//This is for background color
-int Y_AXIS = 1;
-int X_AXIS = 2;
-color b1, b2;
-
-// variables for quantity, xCoordinates, yCoordinates & movement across x-axis of clouds
-int cloudsQuant = 1; // quantity of clouds
-float[] xCoords = new float[cloudsQuant];
-float[] yCoords = new float[cloudsQuant];
-float[] xMove = new float[cloudsQuant];
-
-int r; // variable to generate random clouds
-int count = 0; // a counter
-int fadeAway = 255; // controls "fading" effects
+Cloud cloud;
+Gradient gradient;
+Gradient gradient2;
 
 void setup() {
     size(1000, 1000);
-    //define colors for gradient background
-    b1 = color(139, 211, 242);
-    b2 = color(212, 221, 198);
+    gradient = new Gradient(0, 0, 1000, 1000, color(139, 211, 242), color(212, 221, 198), 1 );
+    gradient2 = new Gradient(0, 1000, 1040, 1000, color(139, 211, 242), color(212, 221, 198), 2);   
+    cloud = new Cloud(1, 0, 0, 255 );
+    cloud.setcloud();
+}
 
+void draw() {
+    //gradient background
+    gradient.setGradient();
+    gradient2.setGradient();
+    cloud.display();
+}
+
+class Cloud {
+  int cloudsQuant;
+  float[] xCoords;
+  float[] yCoords;
+  float[] xMove;
+  int r; 
+  int count;
+  int fadeAway;
+  PImage[] img;
+     
+  Cloud(int cloudsQuant, int r, int count, int fadeAway) {
+    this.cloudsQuant = cloudsQuant;
+    this.xCoords = new float[cloudsQuant];
+    this.yCoords = new float[cloudsQuant];
+    this.xMove = new float[cloudsQuant];
+    this.r = r;
+    this.count = count;
+    this.fadeAway = fadeAway;
+    this.img = new PImage[5];
+    //this.tempImg = tempImg;
+    
+  }
+  
+   void setcloud(){
+    //PImage[] img = new PImage[5];
     smooth();
     noStroke();
 
@@ -32,24 +53,19 @@ void setup() {
       xMove[i] = 4; // moves a cloud at speed of 4
   }
   
-  // Clouds array (loads all 5 cloud images)
-  for (int i=0; i<clouds.length; i++) {
-    clouds[i] = loadImage(i+".png");
-  }
-  
-}
-
-void draw() {
-    //gradient background
-    setGradient(0, 0, 1000, 1000, b1, b2, Y_AXIS);
-    setGradient(0, 1000, 1040, 1000, b2, b1, X_AXIS);
-
-    // For loop to create clouds
+    // Clouds array (loads all 5 cloud images)
+    for (int i=0; i<img.length; i++) {
+      img[i] = loadImage(i+".png");  
+  }     
+ }
+ 
+ void display(){
+   // For loop to create clouds
     for (int i=0; i<cloudsQuant; i++) {
       // Create image from clouds array at random
       // xCoordinate and random yCoordinate       
       tint(255, fadeAway); // Controls fade of clouds
-      image(clouds[r], xCoords[i], yCoords[i]); 
+      image(img[r], xCoords[i], yCoords[i]); 
       xCoords[i] += xMove[i]; // Move the cloud
   
       // If the clouds move past the width of the window then...
@@ -66,17 +82,39 @@ void draw() {
         fadeAway -= 3;
     }
     }
+ }  
 }
 
 //gradient background
-void setGradient(int x, int y, float w, float h, color b1, color b2, int axis ) {
-    noFill();
-    if (axis == Y_AXIS) {  // Top to bottom gradient
-        for (int i = y; i <= y+h; i++) {
-            float inter = map(i, y, y+h, 0, 1);
-            color b = lerpColor(b1, b2, inter);
-            stroke(b);
-            line(x, i, x+w, i);
-        }
-    }
-} 
+class Gradient {
+  int x;
+  int y;
+  float w;
+  float h;
+  color b1;
+  color b2;
+  int axis;
+  
+  Gradient(int x, int y, float w, float h, color b1, color b2, int axis ) {
+    this.x = x;
+    this.y = y;
+    this.w = w;
+    this.h = h;
+    this.b1 = b1;
+    this.b2 = b2;
+    this.axis = axis;
+  }
+  
+  void setGradient() {    //int x, int y, float w, float h, color b1, color b2, int axis 
+      noFill();
+      int Y_AXIS = 1;
+      if (axis == Y_AXIS) {  // Top to bottom gradient
+          for (int i = y; i <= y+h; i++) {
+              float inter = map(i, y, y+h, 0, 1);
+              color b = lerpColor(b1, b2, inter);
+              stroke(b);
+              line(x, i, x+w, i);
+          }
+      }
+  }
+}
