@@ -1,0 +1,1 @@
+This is a text file that describes how to run assignment 4: 2D animation for group 18. After uploading all the pictures you are set to run the code. After opening the code, click on run button that is located on the left side of the processing program.}
