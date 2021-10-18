@@ -1,11 +1,13 @@
 PShape earth;
 PShape sun;
-class Planet{
+Float angle;
+
+class Sun{
   color c;
   
-  Planet() {}
+  Sun() {}
   
-  Planet(color c){
+  Sun(color c){
     this.c = c;
   }
   void show(){
