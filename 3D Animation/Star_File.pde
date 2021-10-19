@@ -1,39 +1,45 @@
 Star star1;
 int z = 100;
+float angle = 0;
+Planet planet;
+Moon moon;
+PImage moonTexture;
+PImage planetTexture;
 
 void setup() {
-  size(1000, 1000, P3D);
+  size(1200, 1200, P3D);
   //initiate camera angle
-  camera(-500, -100, 500, 0, 0, 0, 0, 1, 0);
+  //camera(-500, -100, 500, 0, 0, 0, 0, 1, 0);
+  //camera();
   //create an object of each class
+  beginCamera();
+  camera();
+  rotateX(PI/6);
+  endCamera();
+  moonTexture = loadImage("moontexture.jpeg");
+  planetTexture = loadImage("planetTexture.jpeg");
+  color x = color(252, 202, 3);
+  moon = new Moon(50, 0, x, moonTexture);
+  moon.createMoon(1);
   
   star1 = new Star(100,100,100,0,0);
+  planet = new Planet(color(200,200,0));
+  frameRate(60);
   
 }
 
 void draw() {
-  background(204, 229, 255);
-  if (keyPressed) {
-    if (keyCode == UP) {
-      z += 6;
-    } else if (keyCode == DOWN) {
-      z -= 6;
-    }
-  }
+  background(0);
   
-  camera(690, 360, z, // position of the camera
-          0, 0, 0, // where the camera is looking
-          0, 1, 0); // vector (what is up relative to the camera)
+  lights();
+  translate(50, 100);
+  moon.display();
+  moon.orbit();
+   
+  planet.show();
   
-          
-  // moves camera on x and y position by holding key and moving mouse
-  if (keyPressed) {
-    if (key == 'y') {
-      camera(690, mouseY, z, 0, 0, 0, 0, 1, 0);
-    } else if (key == 'x') {
-      camera(mouseX, 360, z, 0, 0, 0, 0, 1, 0);
-    }
-  }
+  planet.rotateEarth();
+ 
+  star1.animate(); 
   
-  star1.animate();
 }

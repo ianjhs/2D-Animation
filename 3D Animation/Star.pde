@@ -22,19 +22,19 @@ class Star{
   sphereDetail(20);
   sphere(100);
   
-  //makes petas flash different colors 
+  //makes small spheres flash different colors 
   float R = random(255);
   float G = random(255);
   float B = random(255);
   fill(R,G,B);
   
-  //makes petals unique sphere shape
+  //makes unique sphere shape
   sphereDetail(8);
   
-  //rotates petals around the center sphere of the flower 
+  //rotates spheres around the center sphere 
   rotateY(angle2);
   
-  //translates petals to the right location
+  //translates small spheres to the right location
   translate(-200,0,0);
   sphere(20);
   translate(50,0,0);
@@ -52,7 +52,7 @@ class Star{
   translate(0,-50,0);
   sphere(20);
   
-  //increments angles to rotate center sphere on z axis and petals around y axis
+  //increments angles to rotate center sphere on z axis and small spheres around y axis
   angle += .05;
   angle2 += .1;
   popMatrix();
