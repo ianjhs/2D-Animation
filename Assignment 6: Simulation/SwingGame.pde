@@ -17,7 +17,6 @@ void setup(){
 
 void draw(){
   background(110);
-  ellipseMode(RADIUS);
   
   s1.display();
   set.display();
@@ -71,6 +70,7 @@ class Swing{
   }
   
   void display(){
+    ellipseMode(RADIUS);
     this.victor.set(this.len*sin(this.theta), this.len*cos(this.theta), 0);
     this.victor.add(this.origin);
     stroke(0);
