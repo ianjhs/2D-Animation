@@ -56,14 +56,6 @@ class Snake {
   void win() {
     if (s.score == target) {
         s.display();
-        if (keyPressed) {
-          if (key == ' ') {
-            snake.tail.clear();
-            s.score = 0;
-            reset_snek();
-            frameRate(20);
-          }
-        }
       }
   }
  

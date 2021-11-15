@@ -26,6 +26,7 @@ class Screen{
       textSize(30);
       if (keyPressed) {
         if (key == ' ') {
+          reset_snek();
           snake.total = 0;
           s.score = 0;
           frameRate(20);
@@ -40,6 +41,7 @@ class Screen{
       textSize(30);
       if (keyPressed) {
         if (key == ' ') {
+          reset_snek();
           snake.total = 0;
           s.score = 0;
           frameRate(20);
@@ -53,6 +55,7 @@ class Screen{
       textSize(30);
       if (keyPressed) {
         if (key == ' ') {
+          reset_snek();
           snake.total = 0;
           s.score = 0;
           frameRate(20);
@@ -63,7 +66,7 @@ class Screen{
     
     button.display();
     fill(255);
-    text("Restart?", 202, 305);
+    text("Press Space to restart?", 202, 305);
     
   
   }

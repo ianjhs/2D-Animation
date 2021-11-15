@@ -4,7 +4,6 @@ int scl = 5;
 //int life = 1;
 PFont mono;
 food yummy;
-//int target = 15;
 
 //GUI
 Screen s;
