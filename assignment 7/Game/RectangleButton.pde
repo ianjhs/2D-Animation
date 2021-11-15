@@ -1,4 +1,5 @@
 //extended and added onto RectangleButton from class
+//constructor and buttonClicked based off example from class
 class RectangleButton extends Button {
   PVector topLeft;
   float rectWidth;
