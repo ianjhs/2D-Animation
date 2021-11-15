@@ -27,6 +27,9 @@ void draw() {
   snake.update();
   snake.display();
   
+  scoreboard.display();  
+  scoreboard.changeScore(s.score);
+  
   //add function to start game to the startGame()  function in the button class
   //when game is over, set changeStatus to true for win or false for loss 
   // then use changes.score to add the final s.score to the GUI and display the screen with display function
