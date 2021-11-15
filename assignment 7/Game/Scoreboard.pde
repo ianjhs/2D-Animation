@@ -14,6 +14,7 @@ class Scoreboard{
      fill(200);
      rect(topLeft.x,topLeft.y,rectWidth,rectHeight);
      fill(0);
+     textSize(15);
      text("Score: ",415,34);
      text(this.score, 460, 34);
       
