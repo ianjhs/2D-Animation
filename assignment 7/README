@@ -1,0 +1,2 @@
+This is the snake game. The player controls the snake using the keyboard arrows. The keybaord arrows determine the direction the snake goes. The goal is for player to navigate the snake to eat the food that randomly appears on screen, and gain points while doing so. If the snake goes out of bounds, the game is over. There are three rules of the game. Snake cannot go out of bounds, or it will die. The food disappears after being eaten and is randomly generated again. Once the player gains 7 points, the game ends. The player has won.
+
