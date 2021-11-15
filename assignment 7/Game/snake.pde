@@ -13,7 +13,7 @@ class Snake {
   this.tail = new ArrayList<PVector>();
   this.x = x;
   this.y = y;
-  this.target = 2;
+  this.target = 6;
  }
  
  void dir(float x, float y) {

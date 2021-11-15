@@ -24,14 +24,15 @@ class Screen{
       textSize(50);
       text("You Won", 160, 210);
       textSize(30);
-      if (keyPressed) {
-        if (key == ' ') {
-          reset_snek();
-          snake.total = 0;
-          s.score = 0;
-          frameRate(20);
-        }
-    }
+      //button.startGame();
+    //  if (keyPressed) {
+    //    if (key == ' ') {
+    //      reset_snek();
+    //      snake.total = 0;
+    //      s.score = 0;
+    //      frameRate(20);
+    //    }
+    //}
     }
     
     if (snake.x > 505 || snake.x < -5) {
@@ -39,34 +40,36 @@ class Screen{
       textSize(50);
       text("You Lost", 160, 210);
       textSize(30);
-      if (keyPressed) {
-        if (key == ' ') {
-          reset_snek();
-          snake.total = 0;
-          s.score = 0;
-          frameRate(20);
-        }
-    }
+      //button.startGame();
+    //  if (keyPressed) {
+    //    if (key == ' ') {
+    //      reset_snek();
+    //      snake.total = 0;
+    //      s.score = 0;
+    //      frameRate(20);
+    //    }
+    //}
   }
     else if (snake.y > 505 || snake.y < -5) {
       fill(0);
       textSize(50);
       text("You Lost", 160, 210);
       textSize(30);
-      if (keyPressed) {
-        if (key == ' ') {
-          reset_snek();
-          snake.total = 0;
-          s.score = 0;
-          frameRate(20);
-        }
-    }
+      //button.startGame();
+    //  if (keyPressed) {
+    //    if (key == ' ') {
+    //      reset_snek();
+    //      snake.total = 0;
+    //      s.score = 0;
+    //      frameRate(20);
+    //    }
+    //}
      
    }
     
     button.display();
     fill(255);
-    text("Press Space to restart?", 202, 305);
+    text("Restart?", 202, 305);
     
   
   }

@@ -36,6 +36,11 @@ class Button {
     print("game started ");
 
     //add code to start game 
-  }
-  
+  //  if (keyPressed) {
+        //if (key == ' ') {
+          reset_snek();
+          snake.total = 0;
+          s.score = 0;
+          frameRate(20);
+        }
 }
