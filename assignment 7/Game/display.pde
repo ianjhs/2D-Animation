@@ -18,6 +18,7 @@ void setup() {
   noStroke();
   s = new Screen(100,150,300,200);
   background(255);
+  scoreboard = new Scoreboard(400,10,90,40);
   
   snake = new Snake(100, 100);
   yummy = new food(20*(int) random(0, 20), 20*(int) random(0, 20));
