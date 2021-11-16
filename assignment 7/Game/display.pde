@@ -9,6 +9,7 @@ food yummy;
 Screen s;
 Button button;
 PVector mousePoint;
+Scoreboard scoreboard;
 
 
 void setup() {
