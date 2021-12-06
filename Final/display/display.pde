@@ -6,6 +6,9 @@ PFont mono;
 food yummy;
 Main_menu mainMenu;
 
+
+String[] nameList = {};
+
 //GUI
 Screen s;
 Button button;
