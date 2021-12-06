@@ -62,6 +62,8 @@ class Snake {
         //mainMenu.display();
         startStop = false;
         s.display();
+        nameList = append(nameList, name);
+        saveStrings("winners.txt", nameList);
       }
   }
  
