@@ -47,12 +47,11 @@ class RectangleButton extends Button {
   }
   
   void display() {
-    stroke(210);
     fill(120);
     rect(topLeft.x, topLeft.y, rectWidth, rectHeight);
     fill(#CE3030);
-    textSize(10);
-    text("Main Menu", 350,400);
+    textSize(16);
+    text("Main Menu", 350,398);
   }
   boolean registerMousePress(PVector mousePoint) {
     if (buttonClicked(mousePoint)) {
