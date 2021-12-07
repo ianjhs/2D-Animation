@@ -18,6 +18,8 @@ int speed = 1;
 int gridsteps = 9;
 int edge;
 
+RectangleButton button;
+
 float x = 250;
 float y = 475;
 float w = 200;
@@ -36,6 +38,8 @@ void setup(){
   edge = 50;
   mono = createFont("JuliaMono-Medium.ttf", 32);
   kobata = createFont("Kobata-Regular.otf", 32);
+  
+  button = new RectangleButton(350,400,100,50);
   
   file = new SoundFile(this, "sound.wav");
   file.play();
@@ -98,6 +102,11 @@ void draw(){
 
 void mousePressed()
 {
+  PVector mousePoint = new PVector(mouseX, mouseY);
+  if (button.registerMousePress(mousePoint)){
+    frameCount = 1;
+    loop();
+  }
  if(mousePressed){
   if(mouseX>x && mouseX <x+w && mouseY>y && mouseY <y+h){
    loop();
@@ -193,6 +202,7 @@ void control(){
     textAlign(CENTER,CENTER);
     fill (166,3,19);
     text ("Game over", float(width/2), float(height/2)-20);
+    button.display();
     if (highscore.getInt(4, "Points") < points){
       switch(state){
         case(0):
@@ -210,13 +220,13 @@ void control(){
           highscore.removeRow(highscore.getRowCount()-1);
           saveTable(highscore, "plhs.csv");
           textSize(15);
-          text("Press h for homescreen",float(width/2), float(height/2+30));
+          //text("Press h for homescreen",float(width/2), float(height/2+30));
           noLoop();
           break;
       }
     } else {
       textSize(15);
-      text("Press h for homescreen",float(width/2), float(height/2+30));
+      //text("Press h for homescreen",float(width/2), float(height/2+30));
       noLoop();
     }
   }
