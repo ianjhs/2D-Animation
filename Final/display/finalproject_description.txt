@@ -1,0 +1,9 @@
+We created a snake game. The player will control a snake using the keyboard. The goal of the game is for players to navigate the snake to eat the food that randomly appears on screen, and gain points while doing so. The snake grows after eating food. If the snake goes out of bounds or touches any red blocks, the game is over. 
+
+Michael worked on the GUI with a victory screen and a loss screen. There is a screen class with buttons that trigger a function to restart the game and also show the final score from the previous game. There will also be a main menu with the options to start a new game or toggle the sound on and off.
+
+Ashna worked on the food that the snake eats. The food is randomly generated around the screen. Initially, the food was animated by becoming smaller and bigger and rotating; however, this made the game really hard as the food would be going around in many places and be chaotic. We decided to get rid of the animation on the food. Ashna also helped Ahmet with the animation that occurs while the player is playing the game. 
+
+Ian worked on the snake and the grid of the game. Ian worked on the movement of the snake, and the snake growing after eating the food. The user will be able to move the snake with the keyboard. Ian also added sounds to the game, where users will have the option to mute.
+
+Ahmet worked on the animation in the background while the player is playing the game. Translate and rotate were used as two levels of animation heirarchy. 
